@@ -1,0 +1,442 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+.pick-inset-shadow, .game__container .pick_scissors, .game__container .pick_paper, .game__container .pick_rock {
+  box-shadow: -1px 8px 0px 3px rgba(240, 240, 240, 0.75) inset;
+  -webkit-box-shadow: -1px 8px 0px 3px rgba(240, 240, 240, 0.75) inset;
+  -moz-box-shadow: -1px 8px 0px 3px rgba(240, 240, 240, 0.75) inset;
+}
+
+.picks-paper::after {
+  content: "";
+  height: 120%;
+  width: 120%;
+  position: absolute;
+  background-image: linear-gradient(hsl(230deg, 89%, 62%), hsl(230deg, 89%, 65%));
+  border-radius: 50%;
+  top: -10%;
+  left: -10%;
+  z-index: -1;
+  box-shadow: 0px 8px 0px 0px hsl(230deg, 89%, 55%);
+  -webkit-box-shadow: 0px 8px 0px 0px hsl(230deg, 89%, 55%);
+  -moz-box-shadow: 0px 8px 0px 0px hsl(230deg, 89%, 55%);
+}
+
+.picks-rock::after {
+  content: "";
+  height: 120%;
+  width: 120%;
+  position: absolute;
+  background-image: linear-gradient(hsl(349deg, 71%, 52%), hsl(349deg, 70%, 56%));
+  border-radius: 50%;
+  top: -10%;
+  left: -10%;
+  z-index: -1;
+  box-shadow: 0px 8px 0px 0px hsl(349deg, 70%, 46%);
+  -webkit-box-shadow: 0px 8px 0px 0px hsl(349deg, 70%, 46%);
+  -moz-box-shadow: 0px 8px 0px 0px hsl(349deg, 70%, 46%);
+}
+
+.picks-scissors::after {
+  content: "";
+  height: 120%;
+  width: 120%;
+  position: absolute;
+  background-image: linear-gradient(hsl(39deg, 89%, 49%), hsl(40deg, 84%, 53%));
+  border-radius: 50%;
+  top: -10%;
+  left: -10%;
+  z-index: -1;
+  box-shadow: 0px 8px 0px 0px hsl(40deg, 84%, 43%);
+  -webkit-box-shadow: 0px 8px 0px 0px hsl(40deg, 84%, 43%);
+  -moz-box-shadow: 0px 8px 0px 0px hsl(40deg, 84%, 43%);
+}
+
+@-webkit-keyframes scale-in-center {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.scale-in-center {
+  -webkit-animation: scale-in-center 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: scale-in-center 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes scale-out-center {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 1;
+  }
+}
+@keyframes scale-out-center {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 1;
+  }
+}
+.scale-out-center {
+  -webkit-animation: scale-out-center 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: scale-out-center 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@-webkit-keyframes scale-in-top {
+  0% {
+    transform: scale(0);
+    transform-origin: 50% 0%;
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    transform-origin: 50% 0%;
+    opacity: 1;
+  }
+}
+@keyframes scale-in-top {
+  0% {
+    transform: scale(0);
+    transform-origin: 50% 0%;
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    transform-origin: 50% 0%;
+    opacity: 1;
+  }
+}
+.scale-in-top {
+  -webkit-animation: scale-in-top 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: scale-in-top 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle, rgb(31, 55, 86) 20%, rgb(20, 21, 57) 90%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.header__container {
+  margin-top: 48px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 31px;
+  padding-right: 23px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 700px;
+  border: 2px solid hsl(217deg, 16%, 45%);
+  border-radius: 15px;
+}
+.header__container .header__name {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #fff;
+  line-height: 0.8;
+}
+.header__container .header__score {
+  background-color: #fff;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: hsl(229deg, 64%, 46%);
+  text-align: center;
+  letter-spacing: 3px;
+  width: 148px;
+  border-radius: 10px;
+  padding-top: 12px;
+  padding-bottom: 6px;
+}
+.header__container .header__score .header__score-counter {
+  font-weight: 700;
+  font-size: 65px;
+  color: hsl(229deg, 25%, 31%);
+}
+
+.game__container {
+  position: relative;
+  max-width: 465px;
+  margin-top: 85px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  row-gap: 67px;
+  -moz-column-gap: 100px;
+       column-gap: 100px;
+}
+.game__container .triangle {
+  position: absolute;
+  z-index: -2;
+}
+.game__container .pick_rock {
+  grid-column: 1/3;
+}
+.game__container .pick_rock::after {
+  content: "";
+  height: 120%;
+  width: 120%;
+  position: absolute;
+  background-image: linear-gradient(hsl(349deg, 71%, 52%), hsl(349deg, 70%, 56%));
+  border-radius: 50%;
+  top: -10%;
+  left: -10%;
+  z-index: -1;
+  box-shadow: 0px 8px 0px 0px hsl(349deg, 70%, 46%);
+  -webkit-box-shadow: 0px 8px 0px 0px hsl(349deg, 70%, 46%);
+  -moz-box-shadow: 0px 8px 0px 0px hsl(349deg, 70%, 46%);
+}
+.game__container .pick_paper::after {
+  content: "";
+  height: 120%;
+  width: 120%;
+  position: absolute;
+  background-image: linear-gradient(hsl(230deg, 89%, 62%), hsl(230deg, 89%, 65%));
+  border-radius: 50%;
+  top: -10%;
+  left: -10%;
+  z-index: -1;
+  box-shadow: 0px 8px 0px 0px hsl(230deg, 89%, 55%);
+  -webkit-box-shadow: 0px 8px 0px 0px hsl(230deg, 89%, 55%);
+  -moz-box-shadow: 0px 8px 0px 0px hsl(230deg, 89%, 55%);
+}
+.game__container .pick_scissors::after {
+  content: "";
+  height: 120%;
+  width: 120%;
+  position: absolute;
+  background-image: linear-gradient(hsl(39deg, 89%, 49%), hsl(40deg, 84%, 53%));
+  border-radius: 50%;
+  top: -10%;
+  left: -10%;
+  z-index: -1;
+  box-shadow: 0px 8px 0px 0px hsl(40deg, 84%, 43%);
+  -webkit-box-shadow: 0px 8px 0px 0px hsl(40deg, 84%, 43%);
+  -moz-box-shadow: 0px 8px 0px 0px hsl(40deg, 84%, 43%);
+}
+.game__container .pick {
+  cursor: pointer;
+  border-radius: 50%;
+  position: relative;
+  background-color: #fff;
+  padding: 45px;
+}
+.game__container .pick img {
+  width: 70px;
+  height: 70px;
+}
+
+.game__rules-button {
+  color: #fff;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  padding: 10px 20px;
+  border: 2px solid white;
+  border-radius: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
+  cursor: pointer;
+}
+.game__rules-button:hover {
+  transition-duration: 0.2s;
+  background-color: #fff;
+  color: rgb(20, 21, 57);
+}
+
+.game__rules-window {
+  background-color: #fff;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 50px 50px;
+  border-radius: 10px;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 20%;
+}
+.game__rules-window .game__rules-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 70px;
+}
+.game__rules-window .game__rules-action svg {
+  height: 40px;
+  color: hsl(217deg, 16%, 45%);
+  cursor: pointer;
+}
+.game__rules-window .game__rules-action svg:hover {
+  color: hsl(229deg, 25%, 31%);
+}
+.game__rules-window .game__rules-header {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  color: hsl(229deg, 25%, 31%);
+}
+
+.picked {
+  display: none;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 465px;
+  text-align: center;
+  justify-items: center;
+  margin: 0 auto;
+}
+.picked p {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #fff;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.picked .picks {
+  cursor: pointer;
+  border-radius: 50%;
+  position: relative;
+  background-color: #fff;
+  padding: 45px;
+}
+.picked .picks img {
+  width: 70px;
+  height: 70px;
+}
+
+.result {
+  display: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.result p {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 35px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.result .play-again-btn {
+  color: #fff;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 10px 40px;
+  cursor: pointer;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+}
+.result .play-again-btn:hover {
+  transition-duration: 0.2s;
+  background-color: #fff;
+  color: rgb(20, 21, 57);
+}
+
+@media (max-width: 650px) {
+  body {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .game__container {
+    max-width: 425px;
+  }
+  .game__container .pick {
+    padding: 20px;
+  }
+  .header__container .header__name {
+    font-size: 13px;
+  }
+  .header__container .header__score {
+    width: 100px;
+  }
+  .header__container .header__score .header__score-counter {
+    font-size: 45px;
+  }
+  .game__rules-button {
+    right: 50%;
+    transform: translateX(50%);
+  }
+  .game__rules-window {
+    padding: 50px 0;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+  }
+  .game__rules-window .game__rules-action {
+    justify-content: center;
+  }
+  .game__rules-window .game__rules-action p:last-child {
+    position: absolute;
+    bottom: 50px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  .picked {
+    max-width: 425px;
+  }
+  .picked .picks {
+    padding: 25px;
+  }
+  .picked div {
+    transform: none !important;
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .result {
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    top: unset;
+    left: unset;
+    bottom: 130px;
+  }
+}/*# sourceMappingURL=main.css.map */

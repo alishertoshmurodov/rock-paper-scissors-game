@@ -1,0 +1,65 @@
+@mixin pick-border($color, $shadow) {
+  content: "";
+  height: 120%;
+  width: 120%;
+  position: absolute;
+  background-image: $color;
+  border-radius: 50%;
+  top: -10%;
+  left: -10%;
+  z-index: -1;
+  box-shadow: $shadow;
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+}
+
+.pick-inset-shadow {
+  box-shadow: -1px 8px 0px 3px rgba(240, 240, 240, 0.75) inset;
+  -webkit-box-shadow: -1px 8px 0px 3px rgba(240, 240, 240, 0.75) inset;
+  -moz-box-shadow: -1px 8px 0px 3px rgba(240, 240, 240, 0.75) inset;
+}
+
+.picks-paper::after {
+  content: "";
+  height: 120%;
+  width: 120%;
+  position: absolute;
+  background-image: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  border-radius: 50%;
+  top: -10%;
+  left: -10%;
+  z-index: -1;
+  box-shadow: 0px 8px 0px 0px hsl(230, 89%, 55%);
+  -webkit-box-shadow: 0px 8px 0px 0px hsl(230, 89%, 55%);
+  -moz-box-shadow: 0px 8px 0px 0px hsl(230, 89%, 55%);
+}
+
+.picks-rock::after {
+  content: "";
+  height: 120%;
+  width: 120%;
+  position: absolute;
+  background-image: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  border-radius: 50%;
+  top: -10%;
+  left: -10%;
+  z-index: -1;
+  box-shadow: 0px 8px 0px 0px hsl(349, 70%, 46%);
+  -webkit-box-shadow: 0px 8px 0px 0px hsl(349, 70%, 46%);
+  -moz-box-shadow: 0px 8px 0px 0px hsl(349, 70%, 46%);
+}
+
+.picks-scissors::after {
+  content: "";
+  height: 120%;
+  width: 120%;
+  position: absolute;
+  background-image: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  border-radius: 50%;
+  top: -10%;
+  left: -10%;
+  z-index: -1;
+  box-shadow: 0px 8px 0px 0px hsl(40, 84%, 43%);
+  -webkit-box-shadow: 0px 8px 0px 0px hsl(40, 84%, 43%);
+  -moz-box-shadow: 0px 8px 0px 0px hsl(40, 84%, 43%);
+}

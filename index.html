@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <title>Rock, Paper, Scissors</title>
+  <link rel="stylesheet" href="/sass/main.css">
+  <script src="https://kit.fontawesome.com/8837b785e9.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__container">
+      <div class="header__name">
+        <h1>ROCK <br>
+          PAPER <br>
+          SCISSORS
+        </h1>
+      </div>
+      <div class="header__score">
+        <p>SCORE</p>
+        <p class="header__score-counter"></p>
+      </div>
+    </div>
+  </header>
+  <section class="game">
+    <div class="game__container">
+      <img class="triangle" src="/images/bg-triangle.svg" alt="triangle">
+      <div class="pick pick_paper"><img src="/images/icon-paper.svg" alt="paper"></div>
+      <div class="pick pick_scissors"><img src="/images/icon-scissors.svg" alt="scissors"></div>
+      <div class="pick pick_rock"><img src="/images/icon-rock.svg" alt="rock"></div>
+    </div>
+    <div class="picked">
+      <div>
+        <p>YOU PICKED</p>
+        <div class="picks"><img src="" alt=""></div>
+      </div>
+      <div>
+        <p>THE HOUSE PICKED</p>
+        <div class="picks"><img src="/images/icon-scissors.svg" alt=""></div>
+      </div>
+    </div>
+    <div class="game__rules-button">
+      RULES
+    </div>
+    <div class="result">
+      <p></p>
+      <div class="play-again-btn"></div>
+    </div>
+  </section>
+  <script src="/script.js"></script>
+</body>
+
+</html>
