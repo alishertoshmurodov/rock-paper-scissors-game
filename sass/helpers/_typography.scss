@@ -1,7 +1,7 @@
 @mixin barlow-semi($size, $font-weight) {
-    font: {
-        family: 'Barlow Semi Condensed', sans-serif;
-        weight: $font-weight;
-        size: $size;
-    };
+  font: {
+    family: "Barlow Semi Condensed", sans-serif;
+    weight: $font-weight;
+    size: $size;
+  }
 }
