@@ -383,6 +383,7 @@ body {
   }
   .game__container {
     max-width: 425px;
+    margin-top: 25px;
   }
   .game__container .pick {
     padding: 20px;
@@ -414,7 +415,7 @@ body {
   }
   .game__rules-window .game__rules-action p:last-child {
     position: absolute;
-    bottom: 50px;
+    bottom: 100px;
     right: 50%;
     transform: translateX(50%);
   }
@@ -438,5 +439,12 @@ body {
     top: unset;
     left: unset;
     bottom: 130px;
+  }
+  .header__container {
+    margin-top: 30px;
+  }
+  .picked p {
+    margin-top: 20px;
+    margin-bottom: 25px;
   }
 }/*# sourceMappingURL=main.css.map */
